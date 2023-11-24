@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,11 @@ public class HealthBar : MonoBehaviour
     private void OnEnable()
     {
         _health.Changed += OnChanged;
+    }
+
+    private void OnDisable()
+    {
+        _health.Changed -= OnChanged;
     }
 
     private void OnChanged()
